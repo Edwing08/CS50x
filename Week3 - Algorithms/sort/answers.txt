@@ -1,0 +1,15 @@
+sort1 uses: bubble sort
+
+How do you know?: It has different runtimes when it comes to sorting list of numbers random and sorted (O and Omega are different).
+Good performance in the list of sorted numbers. Also, the sorting times are quite high compared to the other sorting algorithms on larger
+lists of numbers.
+
+sort2 uses: merge sort
+
+How do you know?: It has similar runtimes when it comes to sorting each list of numbers (O and Omega are similar).
+Also, the sorting times are quite low compared to the other sorting algorithms on larger lists of numbers.
+
+sort3 uses: selection sort
+
+How do you know?: It has similar runtimes when it comes to sorting each list of numbers (O and Omega are similar).
+the main distinction compared to the "merge sort" is the higher runtime on larger lists of numbers.
