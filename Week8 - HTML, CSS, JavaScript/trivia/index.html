@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>Trivia!</title>
+        <script>
+            // TODO: Add code to check answers to questions
+            // Answers' memory
+            var Answers_Mult = ['Oslo', 'Berlin', 'Lima', 'Tokyo'];
+            var Answers_Free = ['2','4','6'];
+
+            // Function that check the multiple choice question answers
+            function checkMult(event){
+
+                Q_index = event.target.parentNode.getElementsByTagName("h3")[0].innerHTML[0]; // Obtain the question's number
+                answer_given = event.target.innerHTML;                                        // Value of the button clicked
+                result = event.target.parentNode.getElementsByTagName("h4")[0];               // Place where the result will be printed
+
+                // Compare the value of the button clicked with the correct answer according to memory
+                if (Answers_Mult[Q_index - 1] == answer_given){
+                    event.target.style.backgroundColor = "#51D641";
+                    result.innerHTML = "Correct";
+                }
+                else{
+                    event.target.style.backgroundColor = "#EC3030";
+                    result.innerHTML = "Incorrect";
+                }
+            }
+
+            // Function that check the free response question answers
+            function checkFree(event){
+
+                let input_text = event.target.parentNode.getElementsByTagName("input")[0]
+
+                Q_index = event.target.parentNode.getElementsByTagName("h3")[0].innerHTML[0];   // Obtain the question's number
+                answer_given = input_text.value;                                                // Value typed in the input box
+                result = event.target.parentNode.getElementsByTagName("h4")[0];                 // Place where the result will be printed
+
+                // Compare the value of the button clicked with the correct answer according to memory
+                if (Answers_Free[Q_index - 1] == answer_given){
+                    input_text.style.backgroundColor = "#51D641";
+                    result.innerHTML = "Correct";
+                }
+                else{
+                    input_text.style.backgroundColor = "#EC3030";
+                    result.innerHTML = "Incorrect";
+                }
+            }
+
+        </script>
+    </head>
+    <body>
+        <div class="header">
+            <h1>Trivia!</h1>
+        </div>
+
+        <div class="container">
+            <div class="section">
+                <h2>Part 1: Multiple Choice </h2>
+                <hr>
+                <!-- TODO: Add multiple choice question here -->
+                <div>
+                    <h3>1. What is the capital of Norway?</h3>
+                    <button onclick="checkMult(event)">Tokyo</button>
+                    <button onclick="checkMult(event)">El Cairo</button>
+                    <button onclick="checkMult(event)">Oslo</button>
+                    <button onclick="checkMult(event)">Quito</button>
+                    <h4></h4>
+                </div>
+                <div>
+                    <h3>2. What is the capital of Germany?</h3>
+                    <button onclick="checkMult(event)">Munich</button>
+                    <button onclick="checkMult(event)">Berlin</button>
+                    <button onclick="checkMult(event)">Bogotá</button>
+                    <button onclick="checkMult(event)">York</button>
+                    <h4></h4>
+                </div>
+                <div>
+                    <h3>3. What is the capital of Perú?</h3>
+                    <button onclick="checkMult(event)">La Paz</button>
+                    <button onclick="checkMult(event)">Lima</button>
+                    <button onclick="checkMult(event)">Toronto</button>
+                    <button onclick="checkMult(event)">Zürich</button>
+                    <h4></h4>
+                </div>
+                <div>
+                    <h3>4. What is the capital of Japan?</h3>
+                    <button onclick="checkMult(event)">Kyoto</button>
+                    <button onclick="checkMult(event)">Seoul</button>
+                    <button onclick="checkMult(event)">Honolulu</button>
+                    <button onclick="checkMult(event)">Tokyo</button>
+                    <h4></h4>
+                </div>
+            </div>
+            <div class="section">
+                <h2>Part 2: Free Response</h2>
+                <hr>
+                <!-- TODO: Add free response question here -->
+                <div>
+                    <h3>1. How much is 1 + 1?</h3>
+                    <input type = "text"/>
+                    <button onclick="checkFree(event)">Check</button>
+                    <h4></h4>
+                </div>
+                <div>
+                    <h3>2. How much is 2 + 2?</h3>
+                    <input type = "text"/>
+                    <button onclick="checkFree(event)">Check</button>
+                    <h4></h4>
+                </div>
+                <div>
+                    <h3>3. How much is 4 + 2?</h3>
+                    <input type = "text"/>
+                    <button onclick="checkFree(event)">Check</button>
+                    <h4></h4>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta name="viewport" content="initial-scale=1, width=device-width">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+        <link href="styles.css" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=family=Poppins&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
+        <title>My Webpage</title>
+    </head>
+    <body>
+        <div class="page">
+            <div class="top-part">
+                <div class="title-holder">
+                    <p><a href="index.html"><i class="bi bi-arrow-return-left"></i></a> Languages and travelling</p>
+                    <p class="text-description">
+                        In my opinion, learning a language is a difficult task. It requires a lot of effort, time and dedication.
+                        The first language I decided to learn was English and I gave up many times. Despite this, one day,
+                        after a lot of back and forth, I changed my mentality and my way of learning languages.
+                        Learning English has opened many doors for me that were closed before. Traveling is easier now that
+                        I can speak more than one language, so I will continue to learn languages because of its benefits.
+                        this is a list of languages I would like to speak someday.
+                    </p>
+                </div>
+                <div class="switch-button">
+                    <div class="form-check form-switch">
+                        <input class="form-check-input" type="checkbox" role="switch" id="ColortoggleSwitch">
+                        <label class="form-check-label">Dark mode</label>
+                    </div>
+                </div>
+            </div>
+            <div class="cardsHolder">
+
+                <div class="languages">
+                    <ul>
+                        <li>English</li>
+                        <li>German</li>
+                        <li>Japanese</li>
+                        <li>Norwegian</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+        <script>
+            let toggleSwitch = document.querySelector('#ColortoggleSwitch');
+
+            toggleSwitch.addEventListener('click', function(){
+                document.body.classList.toggle("dark-mode");
+                const cards = document.querySelectorAll('.card-main');
+                for (let i = 0; i < cards.length; i++) {
+                    cards[i].classList.toggle("dark-mode-card");
+                }
+            });
+        </script>
+    </body>
+</html>
